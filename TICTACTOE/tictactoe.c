@@ -1,10 +1,9 @@
 #include<stdio.h>
-#include<conio.h>
+#include<stdlib.h>
 int checkwin();
 void showboard();
-void system();
 char board[10]={'0','1','2','3','4','5','6','7','8','9'};
-void main(){
+int main(){
     int player=1,input,status=-1;
     showboard();
     while(status==-1){
@@ -25,14 +24,18 @@ void main(){
         int result=checkwin();
         if(result==1){
             printf("=======PLAYER %d IS WINNER !=======\n",player);
-            return ;
+            break;
         }
         else if(result==0){
             printf("======= MATCH IS DRAW !!!!! =======\n");
-            return ;
+            break;
         }
         player++;
     }
+    printf("\nPress Enter to exit...");
+    getchar();
+    getchar();
+    return 0;
 }
 void showboard(){
     system("cls");
@@ -53,8 +56,6 @@ void showboard(){
     printf("        |        |       \n");
     printf("    %c   |   %c    |    %c   \n",board[7],board[8],board[9]);
     printf("        |        |       \n");
-    
-    getch();
 }
 
 int checkwin(){
