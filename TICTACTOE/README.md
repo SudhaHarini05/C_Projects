@@ -40,6 +40,5 @@ This program allows two players to play on the same computer with a text-based i
 ## ⚙ How to Compile and Run
 
 ```bash
-gcc tictactoe.c -o tictactoe
-./tictactoe       # Linux/macOS
-tictactoe.exe     # Windows
+gcc tictactoe.c -o tictactoe -lm
+tictactoe
